@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="assets/javascript/game.js"></script>
+    <title>Hang Man</title>
+</head>
+<body>
+    <header>Hang Man</header>
+    <p>Press any key to get started!</p>
+
+    <p>Wins:</p>
+    <p id="wins"> </p>
+    
+    <p>Current Word:</p>
+    <p id="word"> </p>
+    
+
+    <p>Number of Guesses Remaining:</p>
+
+    <p>Letters Already Guessed:</p>
+<script>
+
+// The array of words for the hangman game.
+var words = [
+    {w: "Giraffe"},
+    {w: "Monkey"},
+    {w: "Alligator"},
+    {w: "Tortoise"},
+];
+
+//Score is set to zero to start.
+var score = 0;
+//Variable to hold word index.
+var wordIndex = 0;
+var guesses = 15;
+var wins = 0;
+//-----FUNCTIONS---------//
+//Function to render the words for the game if there are still more words. Otherwise show game over screen with final score. 
+
+function renderWord() {
+    if (wordIndex < words.length ){
+        document.querySelector("#word").innerHTML = words.[wordIndex];
+    }
+    else {
+        document.querySelector("#word").innerHTML = "Game Over!";
+        document.querySelector("#score").innerHTML = "Final Score: " + score "!";
+    }
+}
+
+
+</script>
+    
+</body>
+</html>
