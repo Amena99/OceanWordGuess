@@ -1,57 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="assets/javascript/game.js"></script>
-    <title>Hang Man</title>
+    <!-- <script src="assets/javascript/game.js"></script> -->
+
+    <title>Under the Sea Word Guess</title>
+
+    <!-- Stylesheets -->
+
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Added link to the jQuery Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 </head>
+
 <body>
-    <header>Hang Man</header>
-    <p>Press any key to get started!</p>
+    <div class="jumbotron">
+        <h1 class="title">Under the Sea Word Guess</h1>
+        <div class="subtitle">Press any key to get started!</div>
+    </div>
 
-    <p>Wins:</p>
-    <p id="wins"> </p>
-    
-    <p>Current Word:</p>
-    <p id="word"> </p>
-    
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="labels" id="scoretitle">
+                    <h4>Score:</h4>
+                </div>
+                <div class="alert alert-info displayed" id="score" role="alert"></div>
 
-    <p>Number of Guesses Remaining:</p>
+                <div class="labels">
+                    <h4>Number of Guesses Remaining:</h4>
+                </div>
+                <div class="alert alert-info displayed" id="guessesr" role="alert"></div>
 
-    <p>Letters Already Guessed:</p>
-<script>
+                <div class="labels">
+                    <h2>Current Word:</h2>
+                </div>
+                <div class="alert alert-warning displayed" id="word" role="alert">
+                    <h1>
+                </div>
 
-// The array of words for the hangman game.
-var words = [
-    {w: "Giraffe"},
-    {w: "Monkey"},
-    {w: "Alligator"},
-    {w: "Tortoise"},
-];
+                <div class="labels">
+                    <h4>Letters Already Guessed:</h4>
+                </div>
+                <div class="alert alert-info displayed" id="wrong-letters" role="alert"></div>
 
-//Score is set to zero to start.
-var score = 0;
-//Variable to hold word index.
-var wordIndex = 0;
-var guesses = 15;
-var wins = 0;
-//-----FUNCTIONS---------//
-//Function to render the words for the game if there are still more words. Otherwise show game over screen with final score. 
+                <button id="playagain" class="btn btn-primary btn-lg">
+                    <h3><span>Play Again!</span>
+                </button>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
 
-function renderWord() {
-    if (wordIndex < words.length ){
-        document.querySelector("#word").innerHTML = words.[wordIndex];
-    }
-    else {
-        document.querySelector("#word").innerHTML = "Game Over!";
-        document.querySelector("#score").innerHTML = "Final Score: " + score "!";
-    }
-}
+        <!-- Link to Javascript File -->
+        <script type="text/javascript" src="assets/javascript/game.js">
+        </script>
 
-
-</script>
-    
 </body>
+
 </html>
