@@ -3,13 +3,13 @@
 // The array of words for the hangman game.
 var words = ["Kelp", "Seagrass", "Coral", "Shellfish"];
 //var currentword = words[Math.floor(Math.random() * words.length)];
-var currentword = " ";
+var currentword = "";
 //Please note: I experience a bug where despite having Math.random the game keeps generating the same word.
 //I suspect that it is generating a random number for the index only once and running that several times.
 //I tried to fix it by declaring it in my startWord() function below, but that created additional bugs. 
 //I will continue to try to fix it, but am turning it in in this condition. 
 var answerArray = [];
-var remainingLetters = currentword.length;
+var remainingLetters = 0;
 var str_wrong = "";
 var wrongl = [];
 var score = 0;
@@ -84,6 +84,8 @@ function startgame() {
 //Function to display new word dashes
 function startWord() {
     currentword = words[Math.floor(Math.random() * words.length)];
+    remainingLetters = currentword.length;
+    console.log("logging currentword in startWord() : " + currentword + "and remaining Letters: " + remainingLetters);
     for (var i = 0; i < currentword.length; i++) {
         answerArray[i] = " _ ";
         $("#word").text(answerArray.join(" "));
@@ -93,7 +95,7 @@ function startWord() {
 //Function to increment score when all letters in word are found
 function scorekeep() {
     if (remainingLetters < 1) {
-        console.log("scorekeep:" + remainingLetters + " " + score);
+        console.log("remaining letters:" + remainingLetters + " score:" + score);
         score++;
         scorekeep2.text(score);
         $(".score").append(scorekeep2);
@@ -103,8 +105,9 @@ function scorekeep() {
 
 //Reset Button
 $("#playagain").on("click", function () {
-    resetvalues();
     startWord();
+    resetvalues();
+    //switch startWord() to top so that currentWord is updated before resetValues() is called.
 });
 
 //Function to reset values to begin next game sequence
