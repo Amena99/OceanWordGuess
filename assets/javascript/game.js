@@ -82,7 +82,7 @@ function startgame() {
 function startWord() {
     for (var i = 0; i < currentword.length; i++) {
         answerArray[i] = " _ ";
-        $("#word").text(answerArray.join("   "));
+        $("#word").text(answerArray.join(" "));
     }
 };
 
