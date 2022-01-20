@@ -2,7 +2,8 @@
 //Declare Variables
 // The array of words for the hangman game.
 var words = ["Kelp", "Seagrass", "Coral", "Shellfish"];
-var currentword = words[Math.floor(Math.random() * words.length)];
+//var currentword = words[Math.floor(Math.random() * words.length)];
+var currentword = " ";
 //Please note: I experience a bug where despite having Math.random the game keeps generating the same word.
 //I suspect that it is generating a random number for the index only once and running that several times.
 //I tried to fix it by declaring it in my startWord() function below, but that created additional bugs. 
@@ -19,7 +20,7 @@ var guesspermit = true;
 
 
 //Main Program
-//Before game begins: display word as blanks, 10 guesses remaining, score equal to zero, the word as blanks, and call function start game.
+//Before game begins: display word as blanks, 10 guesses remaining, score equal to zero, and call function start game.
 
 guessesrem.text(guessesremaining);
 $("#guessesr").append(guessesrem);
@@ -80,6 +81,7 @@ function startgame() {
 
 //Function to display new word dashes
 function startWord() {
+    currentword = words[Math.floor(Math.random() * words.length)];
     for (var i = 0; i < currentword.length; i++) {
         answerArray[i] = " _ ";
         $("#word").text(answerArray.join(" "));
