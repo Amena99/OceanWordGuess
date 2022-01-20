@@ -58,6 +58,8 @@ function play(guess) {
     else {
         if (guessesremaining > 0 && guesspermit === true && wrongl.indexOf(guess) === -1 && remainingLetters > 0) {
             wrongl.push(guess);
+            console.log(guess);
+            console.log(wrongl);
             $("#wrong-letters").text(wrongl.join(" "));
             $(wrongl).push("");
             guessesremaining--;
