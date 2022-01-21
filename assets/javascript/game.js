@@ -83,7 +83,8 @@ function startgame() {
 
 //Function to display new word dashes
 function startWord() {
-    $("#word").text(" ");
+    //$("#word").text(" ");
+    answerArray = [];
     currentword = words[Math.floor(Math.random() * words.length)];
     remainingLetters = currentword.length;
     console.log("logging currentword in startWord() : " + currentword + " and remaining Letters: " + remainingLetters);
