@@ -117,6 +117,7 @@ function resetvalues() {
     guessesrem.text(guessesremaining);
     wrongl = [];
     $("#wrong-letters").text(wrongl);
+    $("#word").text("");
     guesspermit = true;
 };
 
