@@ -99,7 +99,7 @@ function scorekeep() {
     if (remainingLetters < 1) {
         console.log("remaining letters:" + remainingLetters + " score:" + score);
         score++;
-        const alertTimeout = setTimeout(alertPlayer, 3000);
+        const alertTimeout = setTimeout(alertPlayer, 1000);
         scorekeep2.text(score);
         $(".score").append(scorekeep2);
         wordcomplete = true;  
