@@ -83,9 +83,10 @@ function startgame() {
 
 //Function to display new word dashes
 function startWord() {
+    $("#word").text(" ");
     currentword = words[Math.floor(Math.random() * words.length)];
     remainingLetters = currentword.length;
-    console.log("logging currentword in startWord() : " + currentword + "and remaining Letters: " + remainingLetters);
+    console.log("logging currentword in startWord() : " + currentword + " and remaining Letters: " + remainingLetters);
     for (var i = 0; i < currentword.length; i++) {
         answerArray[i] = " _ ";
         $("#word").text(answerArray.join(" "));
@@ -117,7 +118,6 @@ function resetvalues() {
     guessesrem.text(guessesremaining);
     wrongl = [];
     $("#wrong-letters").text(wrongl);
-    $("#word").text("");
     guesspermit = true;
 };
 
