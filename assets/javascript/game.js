@@ -99,6 +99,7 @@ function scorekeep() {
     if (remainingLetters < 1) {
         console.log("remaining letters:" + remainingLetters + " score:" + score);
         score++;
+        alert("Nice Job! You scored a point!");
         scorekeep2.text(score);
         $(".score").append(scorekeep2);
         wordcomplete = true;
