@@ -1,7 +1,7 @@
 
 //Declare Variables
 // The array of words for the hangman game.
-var words = ["Kelp", "Seagrass", "Coral", "Shellfish"];
+var words = ["Kelp", "Seagrass", "Coral", "Shellfish", "Octopus", "Seahorse", "Shore", "Algae"];
 //var currentword = words[Math.floor(Math.random() * words.length)];
 var currentword = "";
 //Please note: I experience a bug where despite having Math.random the game keeps generating the same word.
