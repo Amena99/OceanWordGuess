@@ -102,9 +102,14 @@ function scorekeep() {
         scorekeep2.text(score);
         $(".score").append(scorekeep2);
         wordcomplete = true;
-        alert("Nice Job! You scored a point!");
+       alertPlayer();
     }
 };
+
+//Alert Player
+function alertPlayer(){
+    alert("Nice Job! You scored a point!");
+}
 
 //Reset Button
 $("#playagain").on("click", function () {
