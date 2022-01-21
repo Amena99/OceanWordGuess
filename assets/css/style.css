@@ -1,9 +1,9 @@
 body {
     background-color: blue;
-    height: 100%;
+    /*height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: center;*/
 }
 .jumbotron{
     background-image: url("https://news-cdn.softpedia.com/images/news2/Scouting-the-Deep-Ocean-with-New-Tools-2.jpg");
